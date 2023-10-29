@@ -1,9 +1,20 @@
+
 public class tahlil
+
 {
     public static void main(String [] args)
     {
-        int[] arry={1,2,3,3};
-        bigO(4,arry);
+        
+        int n=8;
+        int[] arry={1,2,2,6,7,7,7,8};
+        long StartTime=System.nanoTime();
+        for(int i=0;i<n;i++){
+            bigO(n,arry);
+        }
+        long EndTime=System.nanoTime();
+        System.out.println(EndTime-StartTime);
+        
+        
     }
     public static void bigO(int n, int[] A)
     {
@@ -12,10 +23,21 @@ public class tahlil
         {
             FourA[A[i]]+=1;
         }
+        // for(int i=0;i<FourA.length;i++)
+        // {
+        //     System.out.println(FourA[i]);
+        // }
+        int max=0;
         for(int i=0;i<FourA.length;i++)
         {
-            System.out.println(FourA[i]);
+            if (FourA[i]>max){
+                max=i;
+            }
+            
         }
+        System.out.print("max : ");
+            System.out.println(max);
+
         
 
     }

@@ -1,20 +1,21 @@
-
+import java.util.Random;
 public class tahlil
 
 {
     public static void main(String [] args)
     {
-        
-        int n=8;
-        int[] arry={1,2,2,6,7,7,7,8};
-        long StartTime=System.nanoTime();
-        for(int i=0;i<n;i++){
-            bigO(n,arry);
+        Random r=new Random(0);
+    
+        for(int i=1;i<101;i=i+=10){
+            int[] arry=new int[i];
+            for(int j=0;j<i;j++){
+                arry[j]=r.nextInt(4*i);
+            }
+            long StartTime=System.nanoTime();
+            bigO(i,arry);
+            long EndTime=System.nanoTime();
+            System.out.println(EndTime-StartTime);
         }
-        long EndTime=System.nanoTime();
-        System.out.println(EndTime-StartTime);
-        
-        
     }
     public static void bigO(int n, int[] A)
     {
@@ -23,10 +24,6 @@ public class tahlil
         {
             FourA[A[i]]+=1;
         }
-        // for(int i=0;i<FourA.length;i++)
-        // {
-        //     System.out.println(FourA[i]);
-        // }
         int max=0;
         for(int i=0;i<FourA.length;i++)
         {
@@ -35,8 +32,8 @@ public class tahlil
             }
             
         }
-        System.out.print("max : ");
-            System.out.println(max);
+        // System.out.print("max : ");
+        //     System.out.println(max);
 
         
 

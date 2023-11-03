@@ -6,7 +6,7 @@ public class tahlil
     {
         Random r=new Random(0);
     
-        for(int i=1;i<101;i=i+=10){
+        for(int i=100;i<1000;i=i+=100){
             int[] arry=new int[i];
             for(int j=0;j<i;j++){
                 arry[j]=r.nextInt(4*i);
